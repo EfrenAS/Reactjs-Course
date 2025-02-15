@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`GiftCard test should render correctly with snapshot 1`] = `
+<div>
+  <div
+    class="card"
+  >
+    <img
+      alt="Goku vs. Superman"
+      src="https://localhost:3000/goku-vs-superman.gif"
+    />
+    <p>
+      Goku vs. Superman
+    </p>
+  </div>
+</div>
+`;

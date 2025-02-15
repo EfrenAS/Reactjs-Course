@@ -1,3 +1,5 @@
+import PropTypes from "prop-types"
+
 export default function GifCard ({ title, url }) {
   return (
     <div className='card'>
@@ -5,4 +7,9 @@ export default function GifCard ({ title, url }) {
       <p>{title}</p>
     </div>
   )
+}
+
+GifCard.propTypes = {
+  title: PropTypes.string.isRequired,
+  url: PropTypes.string.isRequired
 }

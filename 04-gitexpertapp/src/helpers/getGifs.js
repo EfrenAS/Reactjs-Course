@@ -8,8 +8,6 @@ export const getGifs = async (category) => {
     title: gif.title,
     url: gif.images.original.url
   }))
-
-  console.log(gifts)
-
+  
   return gifts
 }
