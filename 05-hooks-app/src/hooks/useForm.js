@@ -2,7 +2,7 @@ import { useState } from "react"
 
 export default function useForm(initialState = {}) {
   const [formState, setFormState] = useState(initialState)
-
+  
   const handleOnChange = ({target}) => {
     const {name, value} = target
     setFormState({
@@ -11,12 +11,10 @@ export default function useForm(initialState = {}) {
     })
   }
 
-  const handleOnReset = (event) => {
-    event.preventDefault()
-    setFormState(initialState)
-  }
+  const handleOnReset = () => setFormState(initialState)
 
   return {
+    ...formState,
     formState,
     handleOnChange,
     handleOnReset
