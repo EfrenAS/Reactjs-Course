@@ -8,7 +8,7 @@ export default function AboutPage() {
     <div className="flex flex-col items-center justify-center">
       <h1 className="text-4xl font-bold">
         About Page - Hola
-        <span className="text-orange-400">
+        <span aria-label="user-name" className="text-orange-400">
           {user?.name}
         </span>
       </h1>

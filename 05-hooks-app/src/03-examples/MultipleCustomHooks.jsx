@@ -1,5 +1,5 @@
-import useFetch from "../hooks/useFetch"
 import useCounter from "../hooks/useCounter"
+import useFetch from "../hooks/useFetch"
 
 import LoadingMessage from "./componnents/LoadingMessage"
 import PokemonCard from "./componnents/PokemonCard"

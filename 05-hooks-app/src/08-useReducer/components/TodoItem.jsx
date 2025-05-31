@@ -5,6 +5,7 @@ export default function TodoItem({ todo, onDeleteTodo, onToggleTodo }) {
       <span
         className={`${(todo.done) ? "line-through" : ""}`}
         onClick={() => onToggleTodo(todo.id)}
+        aria-label="todo_span"
       >
         {todo.description}
       </span>
