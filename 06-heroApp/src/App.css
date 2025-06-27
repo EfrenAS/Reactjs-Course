@@ -1,0 +1,7 @@
+a > img {
+  view-transition-name: image-hero;
+}
+
+section > img {
+  view-transition-name: image-hero;
+}
