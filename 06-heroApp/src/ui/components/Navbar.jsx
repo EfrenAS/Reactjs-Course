@@ -1,9 +1,14 @@
+import { useContext } from 'react'
 import { Link, NavLink, useNavigate } from 'react-router'
+import { AuthContext } from '../../auth/context/AuthContext'
 
 export default function Navbar () {
   const navigate = useNavigate()
 
+  const { user, logout } = useContext(AuthContext)
+
   const onLogout = () => {
+    logout()
     navigate('/login', {
       replace: true,
       viewTransition: true
@@ -52,7 +57,7 @@ export default function Navbar () {
         className=' bg-amber-500/50 px-2 py-1 rounded hover:bg-amber-600 transition-all duration-300 ease-in-out cursor-pointer'
         onClick={onLogout}
       >
-        Logout
+        {user?.name}
       </button>
     </nav>
   )

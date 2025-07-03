@@ -1,13 +1,21 @@
-import { useState } from 'react'
+import { useContext, useState } from 'react'
 import { useNavigate } from 'react-router'
+import { AuthContext } from '../context/AuthContext'
 
 export default function Login () {
   const [isHovered, setIsHovered] = useState(false)
   const navigate = useNavigate()
   const imgIronMaskUrl = '/assets/ironmask-min.png'
 
+  const { login } = useContext(AuthContext)
+
   const onLogin = () => {
-    navigate('/', {
+    const lastPath = localStorage.getItem('lastPath') || '/'
+    console.log(lastPath)
+
+    login('Efren Anastacio')
+
+    navigate(lastPath, {
       replace: true
     })
   }
