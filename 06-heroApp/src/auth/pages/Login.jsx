@@ -11,7 +11,6 @@ export default function Login () {
 
   const onLogin = () => {
     const lastPath = localStorage.getItem('lastPath') || '/'
-    console.log(lastPath)
 
     login('Efren Anastacio')
 

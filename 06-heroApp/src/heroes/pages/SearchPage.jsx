@@ -1,8 +1,8 @@
-import { useLocation, useNavigate } from 'react-router'
-import { getUrlParams } from '../../heroes/helpers/getUrlParams'
 import useForm from '../../hooks/useForm'
 import HeroCard from '../components/HeroCard'
 import { getHeroesByName } from '../helpers/getHeroesByName'
+import { getUrlParams } from '../helpers/getUrlParams'
+import { useLocation, useNavigate } from 'react-router'
 
 function HeroList ({ heroes }) {
   return (
@@ -19,7 +19,11 @@ function HeroList ({ heroes }) {
 
 function MessageFoundAHero () {
   return (
-    <p className='text-center text-gray-500'>Find to favorite Hero</p>
+    <p
+      className='text-center text-gray-500'
+      aria-labelledby='message-find-hero'
+    >Find to favorite Hero
+    </p>
   )
 }
 
@@ -43,6 +47,8 @@ export default function SearchPage () {
 
   const handleOnSubmit = (event) => {
     event.preventDefault()
+
+    console.log(searchHero)
     const textSearchHero = searchHero.toLowerCase().trim()
 
     if (textSearchHero.length <= 2) return
@@ -56,6 +62,7 @@ export default function SearchPage () {
         <header className='flex flex-col gap-2 items-center'>
           <h1 className='text-center uppercase text-xl font-bold text-amber-500'>Find your favorite hero</h1>
           <form
+            aria-label='form'
             className='flex align-center gap-8 p-5 w-full justify-evenly flex-col sm:flex-row @container'
             onSubmit={handleOnSubmit}
           >
